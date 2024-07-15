@@ -1,0 +1,45 @@
+// Asi es como se crea una variable co la palabra reservada var
+fun texto() {
+    var nombre: String = "Nicolas" 
+    println(nombre) // el println funciona para imprimir la variable en este caso mostrara Nicolas
+}
+
+//Como crear una variable estatica a esta no se le puede cambiar el valor despues de asignarle uno
+fun edad(){
+    var años: Int = 18 
+    println(años) // Imprime el valor de la variable años en este caso se imprimira 18
+}
+
+//hay que tener en cuenta esta diferencia
+// Las variables se declaran con la palabra clave "var" (se pueden modificar).
+// Las constantes se declaran con la palabra clave "val" (las hace inmutables).
+
+// Función que imprime el lugar de nacimiento
+fun lugarNacimiento (){
+   val ciudad:String = "Bogota" 
+   println(ciudad) 
+}
+
+// La propiedad de opcionalidad se define con parámetros al declarar la variable. Si llamamos la función "direccion()" sin parámetros, imprimirá que la dirección es desconocida.
+// Pero si agregamos la dirección como parámetro entre los paréntesis, mostrará lo que introduzcamos.
+
+fun direccion(direccion: String = "Desconocida"){
+    println("La dirección es $direccion.") // Imprime el valor del parámetro dirección porque esa no esta parametrizada 
+}
+
+// Un valor puede dejarse nulo usando el operador "?" después del tipo de dato, esto asegura que el valor no pueda dejarse vacío ya que deben introducirse valores en los parámetros.
+
+fun color(colorOjos: String?){
+    if (colorOjos != null)
+        println("$colorOjos") // Imprime el valor de la variable colorOjos si no es nulo
+}
+
+// Función para llamar a todas las funciones anteriores
+fun main (){
+    edad() // Llama a la función edad()
+    texto() // Llama a la función texto()
+    texto2() // Llama a la función texto2()
+    lugarNacimiento() // Llama a la función lugarNacimiento()
+    direccion("Avenida 10") // Llama a la función direccion() con un parámetro
+    color("Azules") // Llama a la función color() con un parámetro
+}
